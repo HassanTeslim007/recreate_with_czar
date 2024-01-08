@@ -1,14 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:recreate_with_czar/pages/nav/chats.dart';
 import 'package:recreate_with_czar/pages/nav/exercises.dart';
 import 'package:recreate_with_czar/pages/nav/games.dart';
 import 'package:recreate_with_czar/pages/nav/home.dart';
 import 'package:recreate_with_czar/pages/nav/lesson.dart';
 import 'package:recreate_with_czar/utils/colors.dart';
-import 'package:recreate_with_czar/utils/util.dart';
 
 class Nav extends StatefulWidget {
   const Nav({super.key});
@@ -18,8 +15,6 @@ class Nav extends StatefulWidget {
 }
 
 class _NavState extends State<Nav> {
-  final PersistentTabController _controller =
-      PersistentTabController(initialIndex: 0);
   int index = 0;
 
   @override
@@ -62,6 +57,8 @@ class _NavState extends State<Nav> {
       bottomNavigationBar: Padding(
         padding: EdgeInsets.zero,
         child: BottomNavigationBar(
+          backgroundColor: scaffoldBgColor,
+          elevation: 8,
           type: BottomNavigationBarType.fixed,
           currentIndex: index,
           onTap: (value) {
@@ -130,45 +127,6 @@ class _NavState extends State<Nav> {
       const Exercises(),
       const Games(),
       const Chats()
-    ];
-  }
-
-  List<PersistentBottomNavBarItem> _navBarsItems() {
-    return [
-      PersistentBottomNavBarItem(
-        icon: Column(
-          children: [
-            SvgPicture.asset('assets/nav/home.svg'),
-          ],
-        ),
-        title: ("Home"),
-        activeColorPrimary: CupertinoColors.activeBlue,
-        inactiveColorPrimary: CupertinoColors.systemGrey,
-      ),
-      PersistentBottomNavBarItem(
-        icon: SvgPicture.asset('assets/nav/lesson.svg'),
-        title: ("Lesson"),
-        activeColorPrimary: CupertinoColors.activeBlue,
-        inactiveColorPrimary: CupertinoColors.systemGrey,
-      ),
-      PersistentBottomNavBarItem(
-        icon: SvgPicture.asset('assets/nav/exercises.svg'),
-        title: ("Exercises"),
-        activeColorPrimary: CupertinoColors.activeBlue,
-        inactiveColorPrimary: CupertinoColors.systemGrey,
-      ),
-      PersistentBottomNavBarItem(
-        icon: Icon(Icons.control_point_duplicate_rounded),
-        title: ("Games"),
-        activeColorPrimary: CupertinoColors.activeBlue,
-        inactiveColorPrimary: CupertinoColors.systemGrey,
-      ),
-      PersistentBottomNavBarItem(
-        icon: SvgPicture.asset('assets/nav/chats.svg'),
-        title: ("Chats"),
-        activeColorPrimary: CupertinoColors.activeBlue,
-        inactiveColorPrimary: CupertinoColors.systemGrey,
-      ),
     ];
   }
 }

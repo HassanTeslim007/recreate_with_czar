@@ -1,11 +1,44 @@
 import 'package:contained_tab_bar_view/contained_tab_bar_view.dart';
 import 'package:flutter/material.dart';
+import 'package:recreate_with_czar/models/lesson_card.dart';
 import 'package:recreate_with_czar/utils/colors.dart';
 import 'package:recreate_with_czar/utils/util.dart';
+import 'package:recreate_with_czar/widgets/lesson_widget.dart';
 
-class Lesson extends StatelessWidget {
+class Lesson extends StatefulWidget {
   const Lesson({super.key});
 
+  @override
+  State<Lesson> createState() => _LessonState();
+}
+
+class _LessonState extends State<Lesson> {
+  List<LessonCardModel> lessons = [
+    LessonCardModel(
+        color: Colors.orange,
+        title: 'First Trip',
+        subtitle:
+            'Here you will listen to conversations between tourists, and learn to speak together with them!',
+        backgroundImage: 'assets/lesson1.png'),
+    LessonCardModel(
+        color: Colors.grey,
+        title: 'Freelance Work',
+        subtitle:
+            'After taking this classes, you will be able to take orders from foreigners! ',
+        backgroundImage: 'assets/lesson2.png'),
+    LessonCardModel(
+        color: const Color(0xffCB9937),
+        title: 'First Meeting',
+        subtitle:
+            'You will learn to communicate with your colleagues and understand them!',
+        backgroundImage: 'assets/lesson3.png'),
+    LessonCardModel(
+        color: Colors.black,
+        title: 'Meeting With Partners',
+        subtitle:
+            'You will learn to communicate with your colleagues and understand them!',
+        backgroundImage: 'assets/lesson4.png'),
+  ];
   @override
   Widget build(BuildContext context) {
     // final size = MediaQuery.of(context).size;
@@ -32,7 +65,6 @@ class Lesson extends StatelessWidget {
                         border: Border.all(color: borderColor.withOpacity(0.5)),
                         borderRadius: BorderRadius.circular(50)),
                     background: Container(
-                      
                       decoration: BoxDecoration(
                           border:
                               Border.all(color: borderColor.withOpacity(0.5)),
@@ -45,10 +77,20 @@ class Lesson extends StatelessWidget {
                   ],
                   views: [
                     Container(
-                        margin: const EdgeInsets.all(5), color: Colors.red),
-                    Container(color: Colors.green)
+                      margin: const EdgeInsets.all(5),
+                      child: ListView.builder(
+                          itemCount: lessons.length,
+                          itemBuilder: (context, index) =>
+                              LessonWidget(model: lessons[index])),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.all(5),
+                      child: ListView.builder(
+                          itemCount: lessons.length,
+                          itemBuilder: (context, index) =>
+                              LessonWidget(model: lessons[index])),
+                    ),
                   ],
-                  onChange: (index) => print(index),
                 ),
               ),
             ),
