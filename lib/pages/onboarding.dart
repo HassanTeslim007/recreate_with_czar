@@ -153,29 +153,21 @@ class _OnboardingState extends State<Onboarding> {
           const Spacer(),
           Column(
             children: [
-              Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 22),
-                  width: double.maxFinite,
-                  height: 56,
-                  child: CustomButton(
-                    text: 'Continue',
-                    onPressed: () {
-                      navigateTo(context, const Nav());
-                    },
-                  )),
+              CustomButton(
+                text: 'Continue',
+                onPressed: () {
+                  navigateTo(context, const Nav());
+                },
+              ),
               ySpace(10),
-              Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 22),
-                  width: double.maxFinite,
-                  height: 56,
-                  child: CustomButton(
-                    text: 'Skip for now',
-                    bgColor: scaffoldBgColor,
-                    textColor: primaryBrown,
-                    onPressed: () {
-                      navigateTo(context, const Nav());
-                    },
-                  )),
+              CustomButton(
+                text: 'Skip for now',
+                bgColor: scaffoldBgColor,
+                textColor: primaryBrown,
+                onPressed: () {
+                  navigateTo(context, const Nav());
+                },
+              ),
             ],
           )
         ],

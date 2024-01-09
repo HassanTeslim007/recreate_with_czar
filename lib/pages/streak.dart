@@ -86,27 +86,19 @@ class _StreakPageState extends State<StreakPage> {
           const Spacer(),
           Column(
             children: [
-              Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 22),
-                  width: double.maxFinite,
-                  height: 56,
-                  child: CustomButton(
-                    text: 'Continue',
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                  )),
+              CustomButton(
+                text: 'Continue',
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
               ySpace(10),
-              Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 22),
-                  width: double.maxFinite,
-                  height: 56,
-                  child: CustomButton(
-                    text: 'Share',
-                    bgColor: scaffoldBgColor,
-                    textColor: primaryBrown,
-                    onPressed: () {},
-                  )),
+              CustomButton(
+                text: 'Share',
+                bgColor: scaffoldBgColor,
+                textColor: primaryBrown,
+                onPressed: () {},
+              ),
             ],
           )
         ],

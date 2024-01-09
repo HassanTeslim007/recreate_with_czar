@@ -49,7 +49,7 @@ class LessonWidget extends StatelessWidget {
               bottom: 0,
               right: 10,
               child: Container(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   width: 40,
                   height: 40,
                   decoration: BoxDecoration(
