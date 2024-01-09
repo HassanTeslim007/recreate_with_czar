@@ -4,6 +4,7 @@ import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:recreate_with_czar/pages/nav/nav.dart';
 import 'package:recreate_with_czar/utils/colors.dart';
 import 'package:recreate_with_czar/utils/util.dart';
+import 'package:recreate_with_czar/widgets/custom_button.dart';
 
 class Onboarding extends StatefulWidget {
   const Onboarding({super.key});
@@ -153,36 +154,28 @@ class _OnboardingState extends State<Onboarding> {
           Column(
             children: [
               Container(
-                margin: const EdgeInsets.symmetric(horizontal: 22),
-                width: double.maxFinite,
-                height: 56,
-                child: ElevatedButton(
-                    style:
-                        ElevatedButton.styleFrom(backgroundColor: primaryBrown),
+                  margin: const EdgeInsets.symmetric(horizontal: 22),
+                  width: double.maxFinite,
+                  height: 56,
+                  child: CustomButton(
+                    text: 'Continue',
                     onPressed: () {
                       navigateTo(context, const Nav());
                     },
-                    child: const Text(
-                      'Continue',
-                      style: TextStyle(color: Colors.white, fontSize: 20),
-                    )),
-              ),
+                  )),
               ySpace(10),
               Container(
-                margin: const EdgeInsets.symmetric(horizontal: 22),
-                width: double.maxFinite,
-                height: 56,
-                child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.white, elevation: 0),
+                  margin: const EdgeInsets.symmetric(horizontal: 22),
+                  width: double.maxFinite,
+                  height: 56,
+                  child: CustomButton(
+                    text: 'Skip for now',
+                    bgColor: scaffoldBgColor,
+                    textColor: primaryBrown,
                     onPressed: () {
                       navigateTo(context, const Nav());
                     },
-                    child: Text(
-                      'Skip for now',
-                      style: TextStyle(color: primaryBrown, fontSize: 20),
-                    )),
-              ),
+                  )),
             ],
           )
         ],

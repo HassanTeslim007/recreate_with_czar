@@ -1,6 +1,7 @@
 import 'package:contained_tab_bar_view/contained_tab_bar_view.dart';
 import 'package:flutter/material.dart';
 import 'package:recreate_with_czar/models/lesson_card.dart';
+import 'package:recreate_with_czar/pages/streak.dart';
 import 'package:recreate_with_czar/utils/colors.dart';
 import 'package:recreate_with_czar/utils/util.dart';
 import 'package:recreate_with_czar/widgets/lesson_widget.dart';
@@ -122,9 +123,12 @@ class _LessonState extends State<Lesson> {
                 ],
               ),
               xSpace(20),
-              const Text(
-                '🔥 2',
-                style: TextStyle(fontSize: 16),
+              InkWell(
+                onTap: () => navigateTo(context, const StreakPage()),
+                child: const Text(
+                  '🔥 2',
+                  style: TextStyle(fontSize: 16),
+                ),
               ),
               xSpace(20),
               const Text(

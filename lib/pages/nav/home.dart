@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:recreate_with_czar/models/home_card.dart';
+import 'package:recreate_with_czar/pages/streak.dart';
 import 'package:recreate_with_czar/utils/colors.dart';
 import 'package:recreate_with_czar/utils/util.dart';
 import 'package:recreate_with_czar/widgets/home_cards.dart';
@@ -89,9 +90,14 @@ class _HomeState extends State<Home> {
                     ],
                   ),
                   xSpace(40),
-                  const Text(
-                    '🔥 2',
-                    style: TextStyle(fontSize: 16),
+                  InkWell(
+                    onTap: (){
+                      navigateTo(context, const StreakPage());
+                    },
+                    child: const Text(
+                      '🔥 2',
+                      style: TextStyle(fontSize: 16),
+                    ),
                   ),
                   xSpace(40),
                   const Text(
