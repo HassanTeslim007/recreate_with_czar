@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:recreate_with_czar/pages/onboarding.dart';
 import 'package:recreate_with_czar/utils/colors.dart';
+import 'package:recreate_with_czar/utils/size_config.dart';
 import 'package:recreate_with_czar/utils/util.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -61,8 +62,7 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
             Positioned(
               top: 100,
-              left: size.width / 4,
-              right: size.width / 4,
+              left: SizeConfig.fromWidth(context, 21),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -98,19 +98,19 @@ class _SplashScreenState extends State<SplashScreen> {
                                 Text(
                                   'Speak',
                                   style: TextStyle(
-                                    fontSize: 40,
+                                    fontSize: SizeConfig.fontSize(context, 9),
                                     foreground: Paint()
                                       ..style = PaintingStyle.stroke
                                       ..strokeWidth = 2
                                       ..color = splashOrange,
                                   ),
                                 ),
-                                const Text(
+                                Text(
                                   'Speak',
                                   style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 40,
-                                  ),
+                                      color: Colors.white,
+                                      fontSize:
+                                          SizeConfig.fontSize(context, 9)),
                                 )
                               ],
                             ),
@@ -119,7 +119,7 @@ class _SplashScreenState extends State<SplashScreen> {
                                 Text(
                                   'Sphere',
                                   style: TextStyle(
-                                    fontSize: 40,
+                                    fontSize: SizeConfig.fontSize(context, 9),
                                     foreground: Paint()
                                       ..style = PaintingStyle.stroke
                                       ..strokeWidth = 2
@@ -130,7 +130,7 @@ class _SplashScreenState extends State<SplashScreen> {
                                   'Sphere',
                                   style: TextStyle(
                                     color: splashOrange,
-                                    fontSize: 40,
+                                    fontSize: SizeConfig.fontSize(context, 9),
                                   ),
                                 )
                               ],
@@ -154,19 +154,21 @@ class _SplashScreenState extends State<SplashScreen> {
                                         '...speak the word',
                                         style: TextStyle(
                                           fontStyle: FontStyle.italic,
-                                          fontSize: 20,
+                                          fontSize:
+                                              SizeConfig.fontSize(context, 4.5),
                                           foreground: Paint()
                                             ..style = PaintingStyle.stroke
                                             ..strokeWidth = 2
                                             ..color = primaryBrown,
                                         ),
                                       ),
-                                      const Text(
+                                      Text(
                                         '..speak the word',
                                         style: TextStyle(
                                           fontStyle: FontStyle.italic,
                                           color: Colors.white,
-                                          fontSize: 20,
+                                          fontSize:
+                                              SizeConfig.fontSize(context, 4.5),
                                         ),
                                       )
                                     ],

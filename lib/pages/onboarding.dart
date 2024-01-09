@@ -123,7 +123,7 @@ class _OnboardingState extends State<Onboarding> {
                           item,
                           style: TextStyle(
                               color: isSelected ? Colors.white : Colors.black,
-                              fontSize: 20),
+                              fontSize: 14),
                         ),
                       ),
                     ),
@@ -167,6 +167,7 @@ class _OnboardingState extends State<Onboarding> {
                       style: TextStyle(color: Colors.white, fontSize: 20),
                     )),
               ),
+              ySpace(10),
               Container(
                 margin: const EdgeInsets.symmetric(horizontal: 22),
                 width: double.maxFinite,

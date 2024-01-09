@@ -102,10 +102,11 @@ class _LessonState extends State<Lesson> {
 
   _buildheaderRow() {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 45),
+      margin: const EdgeInsets.symmetric(horizontal: 40),
       padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
       decoration: BoxDecoration(
-          border: Border.all(), borderRadius: BorderRadius.circular(20)),
+          border: Border.all(color: borderColor.withOpacity(0.5)),
+          borderRadius: BorderRadius.circular(10)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -120,12 +121,12 @@ class _LessonState extends State<Lesson> {
                   Icon(Icons.expand_more)
                 ],
               ),
-              xSpace(40),
+              xSpace(20),
               const Text(
                 '🔥 2',
                 style: TextStyle(fontSize: 16),
               ),
-              xSpace(40),
+              xSpace(20),
               const Text(
                 '🎯 17',
                 style: TextStyle(fontSize: 16),
