@@ -1,6 +1,7 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:recreate_with_czar/core/utils/util.dart';
 import 'package:recreate_with_czar/pages/nav/chats.dart';
 import 'package:recreate_with_czar/pages/nav/exercises.dart';
 import 'package:recreate_with_czar/pages/nav/games.dart';
@@ -17,7 +18,7 @@ class Nav extends StatefulWidget {
 
 class _NavState extends State<Nav> {
   int index = 0;
-
+  List navItems = ['Home', 'Lesson', 'Exercises', 'Games', 'Chats'];
   @override
   Widget build(BuildContext context) {
     // return PersistentTabView(
@@ -59,69 +60,63 @@ class _NavState extends State<Nav> {
           transitionBuilder: (child, primaryAnimation, secondaryAnimation) =>
               FadeTransition(opacity: primaryAnimation, child: child),
           child: _buildScreens().elementAt(index)),
-      bottomNavigationBar: Padding(
-        padding: EdgeInsets.zero,
-        child: BottomNavigationBar(
-          backgroundColor: scaffoldBgColor,
-          elevation: 8,
-          type: BottomNavigationBarType.fixed,
-          currentIndex: index,
-          onTap: (value) {
-            index = value;
-            setState(() {});
-          },
-          items: [
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                'assets/nav/home.svg',
-              ),
-              activeIcon: SvgPicture.asset(
-                'assets/nav/home_selected.svg',
-              ),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                'assets/nav/lesson.svg',
-              ),
-              activeIcon: SvgPicture.asset(
-                'assets/nav/lesson_selected.svg',
-              ),
-              label: 'Lesson',
-            ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                'assets/nav/exercises.svg',
-              ),
-              activeIcon: SvgPicture.asset(
-                'assets/nav/exercises_selected.svg',
-              ),
-              label: 'Exercices',
-            ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                'assets/nav/games.svg',
-              ),
-              activeIcon: SvgPicture.asset(
-                'assets/nav/games_selected.svg',
-              ),
-              label: 'Games',
-            ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                'assets/nav/chats.svg',
-              ),
-              activeIcon: SvgPicture.asset(
-                'assets/nav/chats_selected.svg',
-              ),
-              label: 'Chats',
-            ),
-          ],
-          selectedItemColor: primaryBrown,
-          showUnselectedLabels: true,
-          unselectedItemColor: Colors.grey,
-        ),
-      ),
+      bottomNavigationBar: Container(
+          decoration: BoxDecoration(
+            color: scaffoldBgColor,
+            boxShadow: const [
+              BoxShadow(
+                color: Color(0x3F000000),
+                blurRadius: 4,
+                offset: Offset(4, 0),
+                spreadRadius: 0,
+              )
+            ],
+          ),
+          height: kToolbarHeight + 5,
+          width: double.maxFinite,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              ...List.generate(
+                  navItems.length,
+                  (index) => InkWell(
+                        onTap: () {
+                          setState(() {
+                            this.index = index;
+                          });
+                        },
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            this.index == index
+                                ? Container(
+                                    width: 30,
+                                    height: 5,
+                                    decoration: BoxDecoration(
+                                        color: primaryBrown,
+                                        borderRadius: const BorderRadius.only(
+                                            bottomLeft: Radius.circular(20),
+                                            bottomRight: Radius.circular(20))),
+                                  )
+                                : ySpace(0),
+                            SvgPicture.asset(
+                              this.index == index
+                                  ? 'assets/nav/${navItems[index].toString().toLowerCase()}_selected.svg'
+                                  : 'assets/nav/${navItems[index].toString().toLowerCase()}.svg',
+                              width: navItems[index] == 'Games' ? 35 : 20,
+                            ),
+                            Text(
+                              navItems[index],
+                              style: TextStyle(
+                                  color: this.index == index
+                                      ? primaryBrown
+                                      : borderColor),
+                            )
+                          ],
+                        ),
+                      ))
+            ],
+          )),
     );
   }
 
