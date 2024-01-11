@@ -91,7 +91,7 @@ class _HomeState extends State<Home> {
                   ),
                   xSpace(40),
                   InkWell(
-                    onTap: (){
+                    onTap: () {
                       navigateTo(context, const StreakPage());
                     },
                     child: const Text(
@@ -124,9 +124,10 @@ class _HomeState extends State<Home> {
           ),
         )),
         xSpace(10),
-        const CircleAvatar()
+        CircleAvatar(
+          child: Image.asset('assets/avatar.png'),
+        )
       ],
     );
   }
-
 }

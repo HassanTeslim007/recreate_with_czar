@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recreate_with_czar/pages/empty_screen.dart';
 
 class Exercises extends StatelessWidget {
   const Exercises({super.key});
@@ -6,7 +7,16 @@ class Exercises extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(child: Text('Exercises'),),
+      body: SafeArea(
+          child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 17.0, vertical: 10),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Empty(),
+          ],
+        ),
+      )),
     );
   }
 }
