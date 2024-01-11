@@ -33,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
       setState(() {
         log(seconds.toString());
       });
-      if (seconds == 6) {
+      if (seconds == 7) {
         timer.cancel();
         Navigator.push(context, SplashTransition(const Onboarding()));
       }
@@ -194,6 +194,27 @@ class _SplashScreenState extends State<SplashScreen> {
                   'assets/splash_man.svg',
                   width: size.width / 2 + 20,
                 )),
+            Positioned(
+                right: 0,
+                top: size.height / 2,
+                child: SvgPicture.asset(
+                  'assets/splash_woman.svg',
+                  width: size.width,
+                )),
+            if (seconds > 4)
+              Positioned(
+                  top: size.height / 2.35,
+                  right: 18,
+                  child: SvgPicture.asset(
+                    'assets/chat_tick1.svg',
+                  )),
+            if (seconds > 5)
+              Positioned(
+                  top: size.height / 2.25,
+                  right: 18,
+                  child: SvgPicture.asset(
+                    'assets/chat_tick2.svg',
+                  )),
             if (seconds > 2)
               Positioned(
                   top: size.height / 1.8 + 10,
@@ -215,13 +236,6 @@ class _SplashScreenState extends State<SplashScreen> {
                   child: SvgPicture.asset(
                     'assets/tick3.svg',
                   )),
-            Positioned(
-                right: 0,
-                top: size.height / 2,
-                child: SvgPicture.asset(
-                  'assets/splash_woman.svg',
-                  width: size.width,
-                ))
           ],
         ),
       ),

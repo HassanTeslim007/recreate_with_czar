@@ -12,9 +12,11 @@ class HomeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: model.title == 'Speaking' ? () {
-        navigateTo(context, const SpeakingLesson());
-      } : () {},
+      onTap: model.title == 'Speaking'
+          ? () {
+              navigateTo(context, const SpeakingLesson());
+            }
+          : () {},
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 14),
         margin: const EdgeInsets.all(10),
