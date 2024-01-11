@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:recreate_with_czar/models/lesson_card.dart';
+import 'package:recreate_with_czar/core/models/lesson_card.dart';
 
 class LessonWidget extends StatelessWidget {
   final LessonCardModel model;

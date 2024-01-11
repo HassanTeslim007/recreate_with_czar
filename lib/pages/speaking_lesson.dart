@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
-import 'package:recreate_with_czar/utils/colors.dart';
-import 'package:recreate_with_czar/utils/util.dart';
+import 'package:recreate_with_czar/core/utils/colors.dart';
+import 'package:recreate_with_czar/core/utils/util.dart';
 import 'package:recreate_with_czar/widgets/custom_button.dart';
 
 class SpeakingLesson extends StatefulWidget {

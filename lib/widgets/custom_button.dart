@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:recreate_with_czar/utils/colors.dart';
+import 'package:recreate_with_czar/core/utils/colors.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;

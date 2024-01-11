@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:recreate_with_czar/utils/colors.dart';
-import 'package:recreate_with_czar/utils/size_config.dart';
-import 'package:recreate_with_czar/utils/util.dart';
+import 'package:recreate_with_czar/core/utils/colors.dart';
+import 'package:recreate_with_czar/core/utils/size_config.dart';
+import 'package:recreate_with_czar/core/utils/util.dart';
 import 'package:recreate_with_czar/widgets/custom_button.dart';
 
 class StreakPage extends StatefulWidget {
@@ -15,7 +15,7 @@ class StreakPage extends StatefulWidget {
 class _StreakPageState extends State<StreakPage> {
   List<(String, bool)> streak = [
     ('Mon', true),
-    ('Tue,', true),
+    ('Tue', true),
     ('Wed', false),
     ('Thu', false),
     ('Fri', false),
@@ -68,8 +68,14 @@ class _StreakPageState extends State<StreakPage> {
                                       color: primaryBrown, fontSize: 20),
                                 ),
                                 e.$2
-                                    ? SvgPicture.asset('assets/streak_on.svg')
-                                    : SvgPicture.asset('assets/streak_off.svg')
+                                    ? SvgPicture.asset(
+                                        'assets/streak_on.svg',
+                                        width: 30,
+                                      )
+                                    : SvgPicture.asset(
+                                        'assets/streak_off.svg',
+                                        width: 30,
+                                      )
                               ],
                             ))
                         .toList()

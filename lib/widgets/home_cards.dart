@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-import 'package:recreate_with_czar/models/home_card.dart';
+import 'package:recreate_with_czar/core/models/home_card.dart';
 import 'package:recreate_with_czar/pages/speaking_lesson.dart';
-import 'package:recreate_with_czar/utils/colors.dart';
-import 'package:recreate_with_czar/utils/util.dart';
+import 'package:recreate_with_czar/core/utils/colors.dart';
+import 'package:recreate_with_czar/core/utils/util.dart';
 
 class HomeCard extends StatelessWidget {
   final HomeCardModel model;

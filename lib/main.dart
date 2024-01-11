@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:recreate_with_czar/pages/splash.dart';
-import 'package:recreate_with_czar/utils/colors.dart';
+import 'package:recreate_with_czar/core/utils/colors.dart';
 
 void main() {
   runApp(const MyApp());

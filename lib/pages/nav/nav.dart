@@ -1,3 +1,4 @@
+import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:recreate_with_czar/pages/nav/chats.dart';
@@ -5,7 +6,7 @@ import 'package:recreate_with_czar/pages/nav/exercises.dart';
 import 'package:recreate_with_czar/pages/nav/games.dart';
 import 'package:recreate_with_czar/pages/nav/home.dart';
 import 'package:recreate_with_czar/pages/nav/lesson.dart';
-import 'package:recreate_with_czar/utils/colors.dart';
+import 'package:recreate_with_czar/core/utils/colors.dart';
 
 class Nav extends StatefulWidget {
   const Nav({super.key});
@@ -53,7 +54,11 @@ class _NavState extends State<Nav> {
     //       NavBarStyle.style3, // Choose the nav bar style with this property.
     // );
     return Scaffold(
-      body: _buildScreens().elementAt(index),
+      body: PageTransitionSwitcher(
+          duration: const Duration(milliseconds: 500),
+          transitionBuilder: (child, primaryAnimation, secondaryAnimation) =>
+              FadeTransition(opacity: primaryAnimation, child: child),
+          child: _buildScreens().elementAt(index)),
       bottomNavigationBar: Padding(
         padding: EdgeInsets.zero,
         child: BottomNavigationBar(

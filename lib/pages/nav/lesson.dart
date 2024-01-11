@@ -1,9 +1,9 @@
 import 'package:contained_tab_bar_view/contained_tab_bar_view.dart';
 import 'package:flutter/material.dart';
-import 'package:recreate_with_czar/models/lesson_card.dart';
+import 'package:recreate_with_czar/core/models/lesson_card.dart';
 import 'package:recreate_with_czar/pages/streak.dart';
-import 'package:recreate_with_czar/utils/colors.dart';
-import 'package:recreate_with_czar/utils/util.dart';
+import 'package:recreate_with_czar/core/utils/colors.dart';
+import 'package:recreate_with_czar/core/utils/util.dart';
 import 'package:recreate_with_czar/widgets/lesson_widget.dart';
 
 class Lesson extends StatefulWidget {

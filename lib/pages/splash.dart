@@ -3,10 +3,11 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:recreate_with_czar/core/shared/custom_route.dart';
 import 'package:recreate_with_czar/pages/onboarding.dart';
-import 'package:recreate_with_czar/utils/colors.dart';
-import 'package:recreate_with_czar/utils/size_config.dart';
-import 'package:recreate_with_czar/utils/util.dart';
+import 'package:recreate_with_czar/core/utils/colors.dart';
+import 'package:recreate_with_czar/core/utils/size_config.dart';
+import 'package:recreate_with_czar/core/utils/util.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -34,8 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
       });
       if (seconds == 6) {
         timer.cancel();
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const Onboarding()));
+        Navigator.push(context, SplashTransition(const Onboarding()));
       }
     });
   }
